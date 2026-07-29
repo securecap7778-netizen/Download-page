@@ -6,209 +6,134 @@
 <title>Download · Khichi Ittihad Pakistan</title>
 <link rel="icon" href="https://i.ibb.co/67BKfCHD/Screenshot-20260722-231112.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --emerald:#0B4F3C;
-  --emerald-dark:#073226;
-  --emerald-soft:#0E5F48;
-  --gold:#C89B3C;
-  --gold-soft:#E4C877;
-  --paper:#FAF7F0;
-  --sand:#EFE8D8;
-  --ink:#1B2420;
-  --ink-soft:#5B6660;
-  --brick:#B5462F;
-  --line:#DCD3BD;
+  --emerald:#0B4F3C;--emerald-dark:#073226;--emerald-soft:#0E5F48;
+  --gold:#C89B3C;--gold-soft:#E4C877;--paper:#FAF7F0;--sand:#EFE8D8;
+  --ink:#1B2420;--ink-soft:#5B6660;--brick:#B5462F;--line:#DCD3BD;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html,body{height:100%;}
 body{
   font-family:'Inter',sans-serif;
   background:linear-gradient(165deg, var(--emerald-dark) 0%, var(--emerald) 45%, #0a3d30 100%);
-  color:var(--ink);
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:24px 16px;
-  -webkit-tap-highlight-color:transparent;
+  color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:24px 16px;-webkit-tap-highlight-color:transparent;
 }
 .card{
-  width:100%;
-  max-width:380px;
-  background:var(--paper);
-  border-radius:24px;
-  padding:36px 28px 28px;
-  box-shadow:0 25px 60px rgba(0,0,0,.35);
-  text-align:center;
-  position:relative;
-  overflow:hidden;
+  width:100%;max-width:380px;background:var(--paper);border-radius:24px;
+  padding:36px 28px 28px;box-shadow:0 25px 60px rgba(0,0,0,.35);
+  text-align:center;position:relative;overflow:hidden;
 }
 .card::before{
-  content:"";
-  position:absolute;top:0;left:0;right:0;height:4px;
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
   background:linear-gradient(90deg, var(--gold), var(--gold-soft), var(--gold));
 }
 .logo{
-  width:96px;height:96px;
-  border-radius:22px;
-  object-fit:cover;
-  border:3px solid var(--gold);
-  box-shadow:0 8px 24px rgba(11,79,60,.25);
-  display:block;
-  margin:0 auto 18px;
-  background:#fff;
+  width:96px;height:96px;border-radius:22px;object-fit:cover;border:3px solid var(--gold);
+  box-shadow:0 8px 24px rgba(11,79,60,.25);display:block;margin:0 auto 18px;background:#fff;
 }
-.app-name{
-  font-family:'Amiri',serif;
-  font-size:26px;
-  font-weight:700;
-  color:var(--emerald-dark);
-  line-height:1.25;
-  margin:0 0 4px;
-}
-.app-tag{
-  font-size:12px;
-  font-weight:600;
-  color:var(--gold);
-  letter-spacing:.6px;
-  text-transform:uppercase;
-  margin-bottom:22px;
-}
-.headline{
-  font-size:15px;
-  font-weight:600;
-  color:var(--ink);
-  margin-bottom:20px;
-  line-height:1.45;
-}
+.app-name{font-family:'Amiri',serif;font-size:26px;font-weight:700;color:var(--emerald-dark);line-height:1.25;margin:0 0 4px;}
+.app-tag{font-size:12px;font-weight:600;color:var(--gold);letter-spacing:.6px;text-transform:uppercase;margin-bottom:22px;}
+.headline{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:20px;line-height:1.45;}
 .dl-btn{
-  width:100%;
-  border:none;
-  border-radius:14px;
-  padding:16px 18px;
-  font-size:15px;
-  font-weight:800;
-  cursor:pointer;
-  background:linear-gradient(180deg, var(--gold) 0%, #b8892e 100%);
-  color:var(--emerald-dark);
-  box-shadow:0 8px 20px -6px rgba(200,155,60,.55);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
+  width:100%;border:none;border-radius:14px;padding:16px 18px;font-size:15px;font-weight:800;cursor:pointer;
+  background:linear-gradient(180deg, var(--gold) 0%, #b8892e 100%);color:var(--emerald-dark);
+  box-shadow:0 8px 20px -6px rgba(200,155,60,.55);display:flex;align-items:center;justify-content:center;gap:10px;
   transition:transform .15s ease, opacity .2s;
 }
 .dl-btn:active{transform:scale(.97);}
-.dl-btn:disabled{opacity:.65;pointer-events:none;}
+.dl-btn:disabled{opacity:.7;pointer-events:none;}
 .dl-btn .icon{font-size:20px;line-height:1;}
-.size-hint{
-  font-size:12px;
-  color:var(--ink-soft);
-  margin-top:10px;
-  min-height:18px;
+
+.progress-wrap{display:none;margin-top:18px;text-align:left;}
+.progress-wrap.active{display:block;}
+.progress-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
+.pct{font-family:'IBM Plex Mono',monospace;font-size:28px;font-weight:700;color:var(--emerald-dark);line-height:1;}
+.pct span{font-size:14px;font-weight:600;color:var(--ink-soft);}
+.speed{font-size:12px;font-weight:600;color:var(--emerald);font-family:'IBM Plex Mono',monospace;}
+.bar-bg{width:100%;height:12px;background:var(--sand);border-radius:999px;overflow:hidden;border:1px solid var(--line);}
+.bar-fill{
+  height:100%;width:0%;border-radius:999px;
+  background:linear-gradient(90deg, var(--emerald) 0%, var(--gold) 100%);
+  transition:width .12s ease-out;position:relative;
 }
+.bar-fill::after{
+  content:"";position:absolute;top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+  animation:shimmer 1.2s infinite;
+}
+@keyframes shimmer{0%{transform:translateX(-100%);}100%{transform:translateX(100%);}}
+.mb-row{display:flex;justify-content:space-between;margin-top:8px;font-size:12px;color:var(--ink-soft);font-family:'IBM Plex Mono',monospace;}
+.status-line{margin-top:10px;font-size:12.5px;font-weight:600;color:var(--emerald-dark);text-align:center;min-height:18px;}
+.status-line.error{color:var(--brick);}
+.status-line.done{color:#0E5F48;}
+
+.size-hint{font-size:12px;color:var(--ink-soft);margin-top:10px;min-height:18px;}
 .size-hint.ready{color:var(--emerald);font-weight:600;}
 .size-hint.error{color:var(--brick);font-weight:600;}
-.android-note{
-  margin-top:22px;
-  font-size:13.5px;
-  font-weight:600;
-  color:var(--emerald-dark);
-  letter-spacing:.2px;
-}
-.divider{
-  height:1px;
-  background:var(--line);
-  margin:22px 0 16px;
-}
-.dev-line{
-  font-size:11.5px;
-  color:var(--ink-soft);
-  margin-bottom:12px;
-  line-height:1.4;
-}
+.android-note{margin-top:22px;font-size:13.5px;font-weight:600;color:var(--emerald-dark);letter-spacing:.2px;}
+.divider{height:1px;background:var(--line);margin:22px 0 16px;}
+.dev-line{font-size:11.5px;color:var(--ink-soft);margin-bottom:12px;line-height:1.4;}
 .dev-line strong{color:var(--emerald-dark);}
 .contact-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  background:transparent;
-  border:1.5px solid var(--emerald);
-  color:var(--emerald);
-  border-radius:999px;
-  padding:8px 16px;
-  font-size:12px;
-  font-weight:600;
-  cursor:pointer;
-  text-decoration:none;
-  transition:background .15s, color .15s;
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;background:transparent;
+  border:1.5px solid var(--emerald);color:var(--emerald);border-radius:999px;padding:8px 16px;
+  font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;
 }
 .contact-btn:active{background:var(--emerald);color:#fff;}
 .toast{
-  position:fixed;bottom:28px;left:50%;
-  transform:translateX(-50%) translateY(16px);
-  background:var(--emerald-dark);color:#fff;
-  padding:12px 18px;border-radius:999px;
-  font-size:13px;font-weight:600;
-  opacity:0;pointer-events:none;transition:all .3s;
-  z-index:50;border:1px solid var(--gold);
-  max-width:88%;text-align:center;
+  position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(16px);
+  background:var(--emerald-dark);color:#fff;padding:12px 18px;border-radius:999px;
+  font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:all .3s;
+  z-index:50;border:1px solid var(--gold);max-width:88%;text-align:center;
   box-shadow:0 8px 24px rgba(0,0,0,.3);
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 .toast.error{border-color:var(--brick);}
-.spinner{
-  width:18px;height:18px;border:2.5px solid rgba(11,79,60,.25);
-  border-top-color:var(--emerald-dark);border-radius:50%;
-  animation:spin .7s linear infinite;display:none;
-}
-.dl-btn.loading .spinner{display:block;}
-.dl-btn.loading .btn-text{opacity:.5;}
-@keyframes spin{to{transform:rotate(360deg);}}
 </style>
 </head>
 <body>
 
 <div class="card">
   <img class="logo" src="https://i.ibb.co/67BKfCHD/Screenshot-20260722-231112.png" alt="Khichi Ittihad Logo">
-
   <h1 class="app-name">Khichi Ittihad Pakistan</h1>
   <div class="app-tag">Official Application</div>
-
   <p class="headline">Official App — Download Now</p>
 
   <button class="dl-btn" id="downloadBtn" onclick="startDownload()">
     <span class="icon">⬇️</span>
-    <span class="btn-text" id="btnText">Download APK</span>
-    <span class="spinner"></span>
+    <span id="btnText">Download APK</span>
   </button>
   <div class="size-hint" id="sizeHint">Checking file…</div>
 
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-top">
+      <div class="pct"><span id="pctNum">0</span><span>%</span></div>
+      <div class="speed" id="speedText">0 KB/s</div>
+    </div>
+    <div class="bar-bg"><div class="bar-fill" id="barFill"></div></div>
+    <div class="mb-row">
+      <span id="loadedText">0 MB</span>
+      <span id="totalText">— MB</span>
+    </div>
+    <div class="status-line" id="statusLine">Preparing download…</div>
+  </div>
+
   <p class="android-note">Android App download now 👆</p>
-
   <div class="divider"></div>
-
   <p class="dev-line">Developed by <strong>MrCrazy Digital Company</strong></p>
-  <a class="contact-btn" href="https://mrcrazyteamofficial-lab.github.io/Custmer/" target="_blank" rel="noopener">
-    💬 Contact Developer
-  </a>
+  <a class="contact-btn" href="https://mrcrazyteamofficial-lab.github.io/Custmer/" target="_blank" rel="noopener">💬 Contact Developer</a>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-/* APK path — put K.I.P.apk inside /assets/ folder next to this HTML */
-const APK_PATHS = [
-  "assets/K.I.P.apk",
-  "assets/KIP.apk",
-  "K.I.P.apk",
-  "KIP.apk"
-];
-
+const APK_PATHS = ["assets/K.I.P.apk","assets/KIP.apk","K.I.P.apk","KIP.apk"];
 const $ = (id) => document.getElementById(id);
+let foundApk = null;
+let downloading = false;
 
 function showToast(msg, isError){
   const t = $("toast");
@@ -219,13 +144,22 @@ function showToast(msg, isError){
   showToast._t = setTimeout(() => t.classList.remove("show"), 3200);
 }
 
-function formatMB(bytes){
-  if(!bytes || bytes <= 0) return null;
+function formatBytes(bytes){
+  if(!bytes || bytes < 0) return "0 MB";
   const mb = bytes / (1024 * 1024);
-  return mb >= 10 ? mb.toFixed(1) + " MB" : mb.toFixed(2) + " MB";
+  if(mb >= 100) return mb.toFixed(0) + " MB";
+  if(mb >= 10) return mb.toFixed(1) + " MB";
+  if(mb >= 1) return mb.toFixed(2) + " MB";
+  const kb = bytes / 1024;
+  return kb >= 1 ? kb.toFixed(0) + " KB" : bytes + " B";
 }
 
-let foundApk = null; // { url, size }
+function formatSpeed(bytesPerSec){
+  if(!bytesPerSec || bytesPerSec < 0) return "0 KB/s";
+  const mb = bytesPerSec / (1024 * 1024);
+  if(mb >= 1) return mb.toFixed(2) + " MB/s";
+  return (bytesPerSec / 1024).toFixed(0) + " KB/s";
+}
 
 async function detectApk(){
   const hint = $("sizeHint");
@@ -241,40 +175,28 @@ async function detectApk(){
         const len = res.headers.get("Content-Length");
         const size = len ? Number(len) : 0;
         foundApk = { url: path, size };
-        const mb = formatMB(size);
-        hint.textContent = mb ? ("Ready · " + mb) : "Ready to download";
+        hint.textContent = size ? ("Ready · " + formatBytes(size)) : "Ready to download";
         hint.className = "size-hint ready";
         btn.disabled = false;
-        $("btnText").textContent = mb ? ("Download APK · " + mb) : "Download APK";
+        $("btnText").textContent = size ? ("Download APK · " + formatBytes(size)) : "Download APK";
         return;
       }
-    }catch(e){ /* try next */ }
+    }catch(e){}
   }
 
-  // Fallback: try GET range to confirm existence without full download
   for(const path of APK_PATHS){
     try{
-      const res = await fetch(path, {
-        method: "GET",
-        headers: { "Range": "bytes=0-0" },
-        cache: "no-store"
-      });
+      const res = await fetch(path, { method: "GET", headers: { "Range": "bytes=0-0" }, cache: "no-store" });
       if(res.ok || res.status === 206){
-        const range = res.headers.get("Content-Range");
         let size = 0;
-        if(range){
-          const m = range.match(/\/(\d+)$/);
-          if(m) size = Number(m[1]);
-        } else {
-          const len = res.headers.get("Content-Length");
-          if(len) size = Number(len);
-        }
+        const range = res.headers.get("Content-Range");
+        if(range){ const m = range.match(/\/(\d+)$/); if(m) size = Number(m[1]); }
+        else { const len = res.headers.get("Content-Length"); if(len) size = Number(len); }
         foundApk = { url: path, size };
-        const mb = formatMB(size);
-        hint.textContent = mb ? ("Ready · " + mb) : "Ready to download";
+        hint.textContent = size ? ("Ready · " + formatBytes(size)) : "Ready to download";
         hint.className = "size-hint ready";
         btn.disabled = false;
-        $("btnText").textContent = mb ? ("Download APK · " + mb) : "Download APK";
+        $("btnText").textContent = size ? ("Download APK · " + formatBytes(size)) : "Download APK";
         return;
       }
     }catch(e){}
@@ -287,7 +209,17 @@ async function detectApk(){
   $("btnText").textContent = "Download APK";
 }
 
-function startDownload(){
+function setProgress(pct, loaded, total, speed){
+  const p = Math.max(0, Math.min(100, Math.floor(pct)));
+  $("pctNum").textContent = p;
+  $("barFill").style.width = p + "%";
+  $("loadedText").textContent = formatBytes(loaded);
+  $("totalText").textContent = total > 0 ? formatBytes(total) : "— MB";
+  $("speedText").textContent = formatSpeed(speed);
+}
+
+async function startDownload(){
+  if(downloading) return;
   if(!foundApk){
     showToast("Error: K.I.P.apk assets mein nahi mili", true);
     $("sizeHint").textContent = "APK not found — upload assets/K.I.P.apk";
@@ -295,30 +227,102 @@ function startDownload(){
     return;
   }
 
+  downloading = true;
   const btn = $("downloadBtn");
-  btn.classList.add("loading");
   btn.disabled = true;
+  $("btnText").textContent = "Downloading…";
+  $("sizeHint").style.display = "none";
+  $("progressWrap").classList.add("active");
+  $("statusLine").textContent = "Connecting…";
+  $("statusLine").className = "status-line";
+  setProgress(0, 0, foundApk.size || 0, 0);
 
-  // Trigger real file download
+  const startTime = Date.now();
+  let lastLoaded = 0, lastTime = startTime;
+
+  try{
+    const res = await fetch(foundApk.url, { cache: "no-store" });
+    if(!res.ok) throw new Error("HTTP " + res.status);
+
+    const total = Number(res.headers.get("Content-Length")) || foundApk.size || 0;
+    if(total) foundApk.size = total;
+
+    if(!res.body || !res.body.getReader){
+      $("statusLine").textContent = "Downloading file…";
+      const blob = await res.blob();
+      setProgress(100, blob.size, blob.size, 0);
+      saveBlob(blob);
+      finishOk(blob.size);
+      return;
+    }
+
+    const reader = res.body.getReader();
+    const chunks = [];
+    let loaded = 0;
+    $("statusLine").textContent = "Downloading…";
+
+    while(true){
+      const { done, value } = await reader.read();
+      if(done) break;
+      chunks.push(value);
+      loaded += value.length;
+
+      const now = Date.now();
+      const dt = (now - lastTime) / 1000;
+      let speed = 0;
+      if(dt >= 0.15){
+        speed = (loaded - lastLoaded) / dt;
+        lastLoaded = loaded;
+        lastTime = now;
+      } else {
+        const totalDt = (now - startTime) / 1000;
+        speed = totalDt > 0 ? loaded / totalDt : 0;
+      }
+
+      const pct = total > 0 ? (loaded / total) * 100 : 0;
+      setProgress(pct, loaded, total, speed);
+    }
+
+    setProgress(100, loaded, total || loaded, 0);
+    $("statusLine").textContent = "Saving file…";
+    const blob = new Blob(chunks, { type: "application/vnd.android.package-archive" });
+    saveBlob(blob);
+    finishOk(loaded);
+
+  }catch(err){
+    console.error(err);
+    $("statusLine").textContent = "Download failed — try again";
+    $("statusLine").className = "status-line error";
+    showToast("Download error: file not reachable", true);
+    btn.disabled = false;
+    $("btnText").textContent = foundApk.size ? ("Download APK · " + formatBytes(foundApk.size)) : "Download APK";
+    $("sizeHint").style.display = "block";
+    downloading = false;
+  }
+}
+
+function saveBlob(blob){
+  const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
-  a.href = foundApk.url;
+  a.href = url;
   a.download = "K.I.P.apk";
-  a.rel = "noopener";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
-
-  const mb = formatMB(foundApk.size);
-  showToast(mb ? ("Download started · " + mb) : "Download started");
-
-  setTimeout(() => {
-    btn.classList.remove("loading");
-    btn.disabled = false;
-  }, 1500);
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
 }
 
-// Detect on load
+function finishOk(bytes){
+  $("statusLine").textContent = "✓ Download complete · " + formatBytes(bytes);
+  $("statusLine").className = "status-line done";
+  $("speedText").textContent = "Done";
+  showToast("APK downloaded successfully!");
+  $("downloadBtn").disabled = false;
+  $("btnText").textContent = "Download Again";
+  downloading = false;
+}
+
 detectApk();
 </script>
 </body>
-  </html>
+</html>
